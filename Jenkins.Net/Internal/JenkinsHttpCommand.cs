@@ -76,7 +76,7 @@ namespace JenkinsNET.Internal
 
                 var data = Encoding.UTF8.GetBytes($"{UserName}:{Password}");
                 var basicAuthToken = Convert.ToBase64String(data);
-                request.Headers["Authorization"] = $"Basic {basicAuthToken}";
+                request.Headers.Set("Authorization", $"Basic {basicAuthToken}");
             }
 
             return request;

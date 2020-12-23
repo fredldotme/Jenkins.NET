@@ -24,9 +24,9 @@ namespace JenkinsNET
         public int? GetQueueItemNumber()
         {
             var match = expItemNumber.Match(QueueItemUrl);
-            if (!match.Groups[1].Success) return null;
+            if (!match.Groups.get_Item(1).Success) return null;
 
-            return match.Groups[1].Value.To<int>();
+            return match.Groups.get_Item(1).Value.To<int>();
         }
     }
 }

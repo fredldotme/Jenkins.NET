@@ -37,8 +37,8 @@ namespace JenkinsNET.Internal.Commands
             };
 
             OnRead = response => {
-                var hSize = response.Headers["X-Text-Size"];
-                var hMoreData = response.Headers["X-More-Data"];
+                var hSize = response.Headers.Get("X-Text-Size");
+                var hMoreData = response.Headers.Get("X-More-Data");
 
                 if (!int.TryParse(hSize, out var _size))
                     throw new ApplicationException($"Unable to parse x-text-size header value '{hSize}'!");

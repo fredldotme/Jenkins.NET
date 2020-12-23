@@ -73,8 +73,8 @@ namespace JenkinsNET.Internal.Commands
                     writer.Write('&');
                 }
 
-                var encodedName = HttpUtility.UrlEncode(pair.Key);
-                var encodedValue = HttpUtility.UrlEncode(pair.Value);
+                var encodedName = System.Net.WebUtility.UrlEncode(pair.Key);
+                var encodedValue = System.Net.WebUtility.UrlEncode(pair.Value);
 
                 writer.Write(encodedName);
                 writer.Write('=');

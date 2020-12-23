@@ -28,11 +28,11 @@ namespace JenkinsNET.Internal
                 builder.Append(i > 0 ? "&" : "?");
                 i++;
 
-                var eKey = HttpUtility.UrlEncode(arg.Key);
+                var eKey = System.Net.WebUtility.UrlEncode(arg.Key);
                 var eValue = string.Empty;
 
                 if (arg.Value != null)
-                    eValue = HttpUtility.UrlEncode(arg.Value.ToString());
+                    eValue = System.Net.WebUtility.UrlEncode(arg.Value.ToString());
 
                 builder.Append(eKey);
                 builder.Append("=");
